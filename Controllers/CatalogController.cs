@@ -36,7 +36,6 @@ namespace Catalog.API.Controllers
             //need to rewrite
             var totalItems = await _coroDrCatalogContext.CatalogLists.LongCountAsync();
             var itemsInPage = await _coroDrCatalogContext.CatalogLists
-                                                        .OrderBy(c => c.Name)
                                                         .Skip(pageSize * pageIndex)
                                                         .Take(pageSize)
                                                         .ToListAsync();
