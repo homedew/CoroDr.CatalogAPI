@@ -81,7 +81,7 @@ namespace Catalog.API.Controllers
             }
 
             var itemsInPage = await _coroDrCatalogContext.CatalogLists.Where(i => i.Name.StartsWith(name))
-                                                                      .Skip(pageIndex * pageSize)
+                                                                      .Skip((pageIndex -1) * pageSize)
                                                                       .Take(pageSize)
                                                                       .ToListAsync();
 
